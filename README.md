@@ -6,7 +6,7 @@ Aplicação web para criar e gerenciar fichas de personagem de **Dungeons & Drag
 
 ## Screenshots
 
-![Criação de Personagem](docs/screenshot1.jpg)
+![Criação de Personagem](docs/Screenshot1.jpg)
 
 ![Ficha de Personagem](docs/screenshot2.jpg)
 
