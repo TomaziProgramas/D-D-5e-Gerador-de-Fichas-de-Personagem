@@ -1,111 +1,67 @@
-# D&D 5e — Gerador de Fichas
+# D&D 5e — Gerador de Fichas de Personagem
 
-Aplicação web para criação e gerenciamento de fichas de personagem para **Dungeons & Dragons 5ª Edição**. Desenvolvida com React e Vite, funciona completamente no navegador — sem necessidade de servidor ou banco de dados.
+Aplicação web para criar e gerenciar fichas de personagem de **Dungeons & Dragons 5ª Edição**, desenvolvida com React e Vite. Funciona completamente no navegador, sem necessidade de servidor ou banco de dados.
+
+---
 
 ## Funcionalidades
 
-- **Wizard em 8 passos** para criar personagens do zero (raça, classe, atributos, perícias, combate, equipamentos, magias e backstory)
-- **D20 animado** com SVG temático — crítico e falha crítica destacados visualmente
-- **Rolagem de dados completa:** d4, d6, d8, d10, d12, d20, d100, vantagem, desvantagem e notação livre (ex.: `2d6+3`)
+- **Wizard em 8 passos** para criação de personagens do zero (informações básicas, raça, classe, atributos, perícias, combate, equipamentos, magias e backstory)
+- **Dado D20 animado** com SVG temático — crítico e falha crítica destacados visualmente
+- **Rolagem de dados completa** — d4, d6, d8, d10, d12, d20, d100, com vantagem, desvantagem e notação livre (ex: `2d6+3`)
 - **Ficha de personagem** com HP tracker, slots de magia, inventário e condições
 - **Exportação em PDF** fiel à ficha exibida em tela
 - **Exportação / importação JSON** para backup e compartilhamento de personagens
 - **Múltiplos personagens** salvos no navegador via localStorage
-- **3 temas visuais:** Grimório Sombrio, Pergaminho e Cristal Élfico
+- **3 temas visuais** — Grimório Sombrio, Pergaminho e Cristal Élfico
+
+---
 
 ## Tecnologias
 
-| Lib | Versão | Função |
-|---|---|---|
-| React | 19 | Interface e estado |
-| Vite | 8 | Build e servidor local |
-| jsPDF | 4 | Geração de PDF |
-| html2canvas | 1 | Captura da ficha como imagem |
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- JavaScript (ES6+)
+- CSS3
+
+---
 
 ## Como rodar localmente
 
-### 1. Pré-requisito — Node.js
-
-Acesse [nodejs.org](https://nodejs.org) e baixe a versão **LTS**. Após instalar, abra o terminal e confirme:
-
 ```bash
-node -v
-npm -v
-```
+# Clone o repositório
+git clone https://github.com/TomaziProgramas/D-D-5e-Gerador-de-Fichas-de-Personagem.git
 
-### 2. Instalar dependências
+# Entre na pasta do projeto
+cd D-D-5e-Gerador-de-Fichas-de-Personagem
 
-Abra o terminal **dentro da pasta do projeto** (`dnd-sheet`) e execute:
-
-```bash
+# Instale as dependências
 npm install
-```
 
-Esse comando baixa todas as bibliotecas listadas no `package.json`. Só precisa rodar uma vez.
-
-### 3. Iniciar o servidor de desenvolvimento
-
-```bash
+# Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
-O terminal vai exibir algo como:
+Acesse `http://localhost:5173` no navegador.
+
+---
+
+## Estrutura do Projeto
 
 ```
-  VITE v8.x  ready in 300ms
-  ➜  Local:   http://localhost:5173/
+src/
+├── components/
+│   ├── dice/         # Componente de rolagem de dados
+│   ├── sheet/        # Ficha de personagem
+│   └── steps/        # Etapas do wizard de criação
+├── data/             # Dados de raças, classes, magias, etc.
+├── hooks/            # Hook useCharacter
+├── styles/           # Estilos globais e temas
+└── utils/            # Cálculos de atributos e dados
 ```
 
-Abra o endereço `http://localhost:5173` no navegador e o projeto estará rodando.
-
-> **Atenção:** não abra o `index.html` diretamente no navegador com duplo clique — isso não funciona para projetos React/Vite. Sempre use `npm run dev`.
-
-
-
-## Estrutura do projeto
-
-```
-dnd-sheet/
-├── public/
-│   ├── favicon.svg
-│   └── icons.svg
-├── src/
-│   ├── components/
-│   │   ├── dice/
-│   │   │   └── DiceRoller.jsx    # Dado D20 animado + todos os dados
-│   │   ├── sheet/
-│   │   │   └── CharacterSheet.jsx
-│   │   └── steps/
-│   │       ├── Step1Basic.jsx    # Raça, classe, background
-│   │       ├── Step2Abilities.jsx
-│   │       ├── Step3Skills.jsx
-│   │       ├── Step4Combat.jsx
-│   │       ├── Step5Equipment.jsx
-│   │       ├── Step6Features.jsx
-│   │       ├── Step7Spells.jsx
-│   │       └── Step8Backstory.jsx
-│   ├── data/                     # Dados do sistema D&D 5e
-│   │   ├── backgrounds.js
-│   │   ├── classes.js
-│   │   ├── equipment.js
-│   │   ├── races.js
-│   │   ├── skills.js
-│   │   └── spells.js
-│   ├── hooks/
-│   │   └── useCharacter.jsx      # Estado global do personagem
-│   ├── styles/
-│   │   ├── app.css
-│   │   └── theme.css
-│   ├── utils/
-│   │   ├── calculations.js
-│   │   └── dice.js               # Funções de rolagem de dados
-│   ├── App.jsx
-│   └── main.jsx
-├── index.html
-├── package.json
-└── vite.config.js
-```
+---
 
 ## Licença
 
-MIT
+Este projeto está licenciado sob a licença [MIT](LICENSE).
