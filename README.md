@@ -4,6 +4,16 @@ Aplicação web para criar e gerenciar fichas de personagem de **Dungeons & Drag
 
 ---
 
+## Screenshots
+
+![Criação de Personagem](docs/screenshot1.jpg)
+
+![Ficha de Personagem](docs/screenshot2.jpg)
+
+![Rolagem de Dados](docs/screenshot3.jpg)
+
+---
+
 ## Funcionalidades
 
 - **Wizard em 8 passos** para criação de personagens do zero (informações básicas, raça, classe, atributos, perícias, combate, equipamentos, magias e backstory)
