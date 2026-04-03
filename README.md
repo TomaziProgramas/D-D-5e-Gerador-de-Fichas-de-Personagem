@@ -60,27 +60,7 @@ Abra o endereço `http://localhost:5173` no navegador e o projeto estará rodand
 
 > **Atenção:** não abra o `index.html` diretamente no navegador com duplo clique — isso não funciona para projetos React/Vite. Sempre use `npm run dev`.
 
-## Como publicar no GitHub
 
-```bash
-# 1. Inicializar o repositório
-git init
-
-# 2. Adicionar os arquivos (excluindo node_modules automaticamente via .gitignore)
-git add .
-
-# 3. Primeiro commit
-git commit -m "feat: gerador de fichas D&D 5e com D20 animado e exportação PDF"
-
-# 4. Criar o repositório no GitHub (site ou CLI)
-#    Se usar GitHub CLI:
-gh repo create dnd-sheet --public --source=. --remote=origin --push
-
-#    Ou, se criar manualmente no site:
-git remote add origin https://github.com/SEU_USUARIO/dnd-sheet.git
-git branch -M main
-git push -u origin main
-```
 
 ## Estrutura do projeto
 
